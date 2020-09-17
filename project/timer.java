@@ -1,5 +1,5 @@
 public class timer{
 	public static void main(String[] args){
-		scramble.test();
+		scramble.guide();
 	}
 }
