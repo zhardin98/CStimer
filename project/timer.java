@@ -6,11 +6,10 @@ import java.util.Arrays;
 public class timer{
 	public static DecimalFormat timeFormat = new DecimalFormat("#.##");
 	public static double finalTime = 0.0;
-	public static void main(String[] args) throws IOException{
+	public static double guide(String[] scrambleAlg) throws IOException{
 		clearScreen();
-		String[] scrambleAlg = scramble.guide();
 		double time = stopWatch(scrambleAlg);
-		System.out.println("Time: " + timeFormat.format(time));
+		return time;
 	}
 	public static double stopWatch(String[] scrambleAlg) throws IOException{
 		Scanner input = new Scanner(System.in);
