@@ -1,10 +1,10 @@
 import java.util.Random;
 import java.util.Arrays;
 public class scramble{
-	public static void guide(){
+	public static String[] guide(){
     		int[] sideNumber = buildArray();
 		String[] finalScramble = side(sideNumber);
-		System.out.println(Arrays.toString(finalScramble));
+		return finalScramble;
 	}
 	public static int[] buildArray(){
 		int randomRange = 6;
