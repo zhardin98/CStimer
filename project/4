@@ -70,14 +70,14 @@ public class main extends javax.swing.JFrame{
 		//scramble newScramble = new scramble();
 		//scrambleLabel.setText(Arrays.toString(newScramble.guide()));
 		//timer newTime = new timer();
-		//stopWatch();
+		stopWatch();
 	}
-	private double secondsToWait = 10;
+	private int secondsToWait = 10;
 	private Timer timer;
 	public void stopWatch(){
-		timer = new Timer((int)secondsToWait, e -> {
+		timer = new Timer(secondsToWait, e -> {
 			timeLabel.setText((secondsToWait/1000) + "");
-				secondsToWait += 10;
+				secondsToWait += 1000;
 			});
 			timer.start();
 	}

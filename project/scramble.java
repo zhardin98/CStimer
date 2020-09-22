@@ -4,7 +4,7 @@ public class scramble{
 	public static String[] guide(){
     		int[] sideNumber = buildArray();
 		String[] finalScramble = side(sideNumber);
-		return finalScramble;
+		return finalScramble;		
 	}
 	public static int[] buildArray(){
 		int randomRange = 6;
