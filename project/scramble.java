@@ -2,7 +2,7 @@ import java.util.Random;
 import java.util.Arrays;
 public class scramble{
 	public static String[] guide(){
-    		int[] sideNumber = buildArray();
+		int[] sideNumber = buildArray();
 		String[] finalScramble = side(sideNumber);
 		return finalScramble;		
 	}
@@ -71,7 +71,7 @@ public class scramble{
 		Random rand = new Random();
 		int randomNumber = (rand.nextInt(randomRange) + 1);
 		return randomNumber;
-    	}
+	}
 	public static boolean test(int[] beginArray, int i, int newNumber){
 		if(beginArray[i - 1] != newNumber){
 			return true;
