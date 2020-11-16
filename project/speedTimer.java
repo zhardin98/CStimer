@@ -3,6 +3,7 @@ import javax.swing.Timer;
 
 public class speedTimer extends javax.swing.JFrame
 {
+	public boolean hasRun = false;
 	public boolean timerRunning = false;
 	public double time = 0.0;
 
@@ -15,29 +16,36 @@ public class speedTimer extends javax.swing.JFrame
 	{
 		if (!timerRunning)
 		{
-			stopWatch();
+			stopWatch(hasRun);
 			timerRunning = true;
 		}
 		else
 		{
 			timer.stop();
+			hasRun = true;
 			timerRunning = false;
 			scramble newScramble = new scramble();
 			scrambleLabel.setText(Arrays.toString(newScramble.guide()));
 			actionButton.setText("Start");
 		}
-		
+
 	}
 
-	private double secondsToWait = 10;
-	public Timer timer;
 
-	public void stopWatch()
+	public Timer timer;
+	private double secondsToWait;
+	public void stopWatch(boolean hasRun)
 	{
-		timer = new Timer((int) secondsToWait, e -> {
+		secondsToWait = 10;
+		timer = new Timer((int) secondsToWait, e -> 
+		{
 			timeTextBox.setText((secondsToWait / 1000) + "");
 			secondsToWait += 10;
 		});
+		if (hasRun)
+		{
+			timer.restart();
+		}
 		timer.start();
 		actionButton.setText("Stop");
 	}
